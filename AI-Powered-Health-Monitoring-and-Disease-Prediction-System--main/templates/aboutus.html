@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Drug Assistant</title>
+    <!-- Font Awesome icons (free version) -->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap) -->
+    <link href="http://127.0.0.1:5000/static/css/styles.css" rel="stylesheet" />
+    <style>
+        #form1, #form2 {
+            display: none;
+            width: 50%;
+            margin: auto;
+            padding: 25px;
+            background-color: rgba(0, 0, 0, 0.70);
+        }
+        #form1.active, #form2.active {
+            display: block;
+        }
+        
+        /* Flip card styles */
+        .flip-card {
+            background-color: transparent;
+            width: 250px;
+            height: 250px;
+            perspective: 1000px;
+            margin: 20px auto;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .flip-card-front {
+            background-color: #fff;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .flip-card-back {
+            background-color: #343a40;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .team-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #343a40;
+        }
+        
+        .team-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .team-role {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .team-contribution {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+    </style>
+</head>
+<body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand h1" href="#page-top">Medicine Verification <br> Based on the Various Symptoms Analysis</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li><a data-value="#form1" onclick="toggleform(event)" class="nav-link">Signin</a></li>
+                    <li><a data-value="#form2" onclick="toggleform(event)" class="nav-link">Signup</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#aboutus">About us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Us Section -->
+    <section class="page-section bg-light" id="aboutus">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase" style="color: black !important;">About Us</h2>
+                <h3 class="section-subheading text-muted"style="color: black !important;">Meet the team behind Drug Assistant</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="http://127.0.0.1:5000/static/img/1.jpg" alt="Aruna" class="team-img">
+                                <h4 class="team-name">Aruna</h4>
+                                <p class="team-role">Developer</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="team-name">Contribution</h4>
+                                <p class="team-contribution">
+                                    Developed the core symptom analysis algorithm and implemented the machine learning model for drug recommendations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="http://127.0.0.1:5000/static/img/2.jpg" alt="Preeti" class="team-img">
+                                <h4 class="team-name">Preeti</h4>
+                                <p class="team-role">Developer</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="team-name">Contribution</h4>
+                                <p class="team-contribution">
+                                    Designed the user interface and implemented the front-end components for seamless user experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="http://127.0.0.1:5000/static/img/2.jpg" alt="Priyanka" class="team-img">
+                                <h4 class="team-name">Priyanka</h4>
+                                <p class="team-role">Developer</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="team-name">Contribution</h4>
+                                <p class="team-contribution">
+                                    Created the database architecture and implemented backend APIs for data processing and retrieval.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="http://127.0.0.1:5000/static/img/2.jpg" alt="Arvind" class="team-img">
+                                <h4 class="team-name">Arvind</h4>
+                                <p class="team-role">Developer</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="team-name">Contribution</h4>
+                                <p class="team-contribution">
+                                    Integrated the system components and implemented testing protocols to ensure reliability and accuracy.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="http://127.0.0.1:5000/static/js/scripts.js"></script>
+    <script>
+      function toggleform(e) {
+      var Id =(e.target.getAttribute('data-value'))
+      let Items= ['#form1', '#form2'];
+      Items.map(function(item) {
+          if(Id === item ) {
+              $(item).addClass("active");
+          }
+          else {
+          $(item).removeClass("active");
+          }
+      })
+  }
+  
+  </script>
+</body>
+</html>
